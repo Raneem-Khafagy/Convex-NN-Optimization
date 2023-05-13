@@ -4,12 +4,12 @@ This is an implementation of Convex Neural Network Optimization using the [CVXPY
 
 The implementation is based on the paper "[Convex Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2005/file/0fc170ecbb8ff1afb2c6de48ea5343e7-Paper.pdf)" by Yoshua Bengio, Nicolas Le Roux, Pascal Vincent, Olivier Delalleau, and Patrice Marcotte, published in 2006.
 
-The Python notebook demonstrates the use of Convex Neural Networks to solve the classification problem on the NSL-KDD dataset. The algorithm used is the Incremental Convex NN Algorithm, which updates the weights and biases of a linear classifier at each step to minimize the loss function and regularization penalty.
+This code uses the CVXPY library to solve a binary classification problem using the hinge loss function and L2 regularization. The code generates a toy dataset, preprocesses the data, splits it into training and testing sets, defines the optimization problem using CVXPY, solves the problem, extracts the learned weight vector and bias term, and evaluates the model on the test set.
 
 
 ## Dataset
 
-The NSL-KDD dataset is a benchmark dataset for intrusion detection systems. It contains a labeled set of network traffic data that is divided into four categories: normal, DOS, probe, and R2L (remote to local).
+The code uses a toy dataset generated using the make_classification function from Scikit-learn. The dataset consists of 1000 samples, 10 features, and 5 informative features.
 
 
 ## Dependencies
@@ -24,7 +24,7 @@ The following dependencies are required to run this code:
 
 ## Results
 
-The algorithm achieves a test accuracy of approximately 85%, which is a reasonable performance for the NSL-KDD dataset.
+The algorithm achieves a test accuracy of approximately 85%. The hinge loss function is used as a loss function and the "L1 regularization" is used as a regularization penalty with the regularization parameter set to 0.1. The theta vector and the b scalar (representing the learned weight vector and bias term, respectively) are extracted from the solution and used to compute predicted labels for the test set, which are then compared to the true labels to compute the accuracy.
 
 
 ## Contributing
